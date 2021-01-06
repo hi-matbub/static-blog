@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`index renders unchanged 1`] = `
+Array [
+  "Hello, World!
+ Checkout my ",
+  <a
+    href="/my-first-blog-post"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    First Blog Post
+  </a>,
+]
+`;
