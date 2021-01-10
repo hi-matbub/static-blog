@@ -1,12 +1,9 @@
 module.exports = {
-  collectCoverageFrom: [
-    '**/*.{js,jsx}',
-    '!**/node_modules/**',
-  ],
-  setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
-  testPathIgnorePatterns: ['/node_modules/', '/.next/'],
+  collectCoverageFrom: ["**/*.{js,jsx}", "!**/node_modules/**"],
+  setupFilesAfterEnv: ["<rootDir>/setupTests.js"],
+  testPathIgnorePatterns: ["/node_modules/", "/.next/"],
   transform: {
-    '^.+\\.(js|jsx)$': '<rootDir>/node_modules/babel-jest',
-    '^.+\\.(md|mdx)$': 'jest-transformer-mdx',
-  }
+    "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
+    "^.+\\.(md|mdx)$": "jest-transformer-mdx",
+  },
 };
