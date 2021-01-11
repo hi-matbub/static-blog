@@ -8,8 +8,7 @@ const BlogPreview = ({
   blog_title,
   blog_post,
   path,
-  time_to_read,
-  image,
+  time_to_read,  
 }) => (
   <li key={path}>
     <h2>{blog_title}</h2>        
