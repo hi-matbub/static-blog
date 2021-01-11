@@ -4,6 +4,8 @@
 
 Create a SEO friendly blog based on file name and 3 lines of markdown.
 
+![How To](./public/how-to.gif)
+
 ## Setup
 
 ```bash
