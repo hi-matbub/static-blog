@@ -9,40 +9,42 @@ const BlogPreview = ({
   blog_post,
   path,
   time_to_read,
-  image
+  image,
 }) => (
   <li key={path}>
-    <h2>{ blog_title }</h2>
-    { image ? 
-      <img src={image.img_path} alt={image.alt_tag}/> :
-      null
-    }
-    <p>{`Published by ${author} on ${date_posted}`} <br/>
-      { 
-        time_to_read === 1 ? 
-          time_to_read + ' minute ' 
-          : time_to_read + ' minutes '
-      }
-      {'to read.'}
-    </p>
-    <p>{ blog_post + '...' }</p>    
+    <h2>{blog_title}</h2>        
+    <Link href={`/blog/${path}`}>
+      <a
+        style={{
+          display: "inline-block",
+          fontSize: "14px",
+        }}
+      >
+        {`Published by ${author} on ${date_posted}`} <br />
+        {time_to_read === 1
+          ? time_to_read + " minute "
+          : time_to_read + " minutes "}
+        {"to read."}
+      </a>
+    </Link>
+    <p>{blog_post + "..."}</p>
     <Link href={`/blog/${path}`}>
       <a>Read More...</a>
     </Link>
   </li>
-)
+);
 
 const Index = () => {
   const fetcher = (url) => fetch(url).then((res) => res.json());
   const { data } = useSWR("/api/directory", fetcher);
 
   return (
-    <>
-      <ul>      
+    <div className="as_body">
+      <ul className="as_main">
         {!data
           ? "Loading"
           : data.map((article) => (
-              <BlogPreview 
+              <BlogPreview
                 key={article.path}
                 date_posted={article.date_posted}
                 author={article.author}
@@ -52,10 +54,9 @@ const Index = () => {
                 time_to_read={article.time_to_read}
                 image={article.image}
               />
-            ))
-        }
+            ))}
       </ul>
-    </>
+    </div>
   );
 };
 
